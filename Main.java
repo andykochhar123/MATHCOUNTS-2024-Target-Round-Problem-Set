@@ -6,7 +6,8 @@ public class Main
     // formula one for problem 5
     public static int calculateFormulaOne(int x)
     {
-        int result = calculateFormula(Math.pow(x, 2));
+        int input = (int)(Math.pow(x,2));
+        int result = calculateFormula(input);
         
         return result;
     }
@@ -14,7 +15,7 @@ public class Main
     // formula two for problem 5
     public static int calculateFormulaTwo(int x)
     {
-        int result = Math.pow(calculateFormula(x), 2);
+        int result = (int)Math.pow(calculateFormula(x), 2);
         
         return result;
     }
@@ -29,7 +30,7 @@ public class Main
     // Pythagorean Theorem's method to find side for problem 4
     public static int pythFormulaSide(int hyp, int side)
     {
-        int resultSide = Math.sqrt(Math.pow(hyp, 2) - Math.pow(side, 2));
+        int resultSide = (int)Math.sqrt((int)Math.pow(hyp, 2) - (int)Math.pow(side, 2));
         
         return resultSide;
     }
@@ -37,7 +38,7 @@ public class Main
     // Pythagorean Theorem's method to find hypotenuse for problem 4
     public static int pythFormulaHyp(int side1, int side2)
     {
-        int resultHyp = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+        int resultHyp = (int)Math.sqrt((int)Math.pow(side1, 2) + (int)Math.pow(side2, 2));
         
         return resultHyp;
     }
@@ -86,13 +87,13 @@ what is the area of the large square?
 	     int NUMBER_LARGE_SQUARES = 1;
 	     
 	     // calculating area of one small square
-	     int areaSmallSquare = Math.pow(LENGTH_SMALL_SQUARE, 2);
+	     int areaSmallSquare = (int)Math.pow(LENGTH_SMALL_SQUARE, 2);
 	     
 	     // calculating total area of small squares
 	     int totalAreaSmallSquares = areaSmallSquare * NUMBER_SMALL_SQUARES;
 	     
 	     // calculating area of one large square
-	     int areaLargeSquare = Math.pow(LENGTH_LARGE_SQUARE, 2);
+	     int areaLargeSquare = (int)Math.pow(LENGTH_LARGE_SQUARE, 2);
 	     
 	     // calculating total area of large square
 	     int totalAreaLargeSquares = areaLargeSquare * NUMBER_LARGE_SQUARES;
@@ -132,7 +133,7 @@ minutes in total does the bus spend at rest stops over the course of the trip?
 	     int restHrs = TOTAL_DISTANCE / BUS_AVG_TRIP;
 	     
 	     // calculating time spent at rest stops
-	     int restTimeHrs = noRestHrs - restHrs;
+	     int restTimeHrs = restHrs - noRestHrs;
 	     
 	     // converting time spent at rest stops in minutes
 	     int restTimeMin = restTimeHrs * MIN_IN_HR;
@@ -184,6 +185,7 @@ What is the length of segment EF?
 	     *  If f(x) = 3x − 27, what is the greatest real number x for which f(x^2) = (f(x))^2? 
 	     **/
 	     
+	     System.out.println("PROBLEM 5");
 	     // setting variables based on data given
 	     int formulaOne;
 	     int formulaTwo;
@@ -225,11 +227,11 @@ what is the least possible total value of Coda’s currency?
 	     // setting up ArrayList to store all possible total values
 	     ArrayList <Integer> possibleValues = new ArrayList<>();
 	     
-	     for (int ones = 1; ones <= 500; ones++)
+	     for (int ones = 1; ones <= 300; ones++)
 	     {
-	         for (int nines = 1; nines <= 500; nines++)
+	         for (int nines = 1; nines <= 300; nines++)
 	         {
-	             for (int eightyOnes = 1; eightyOnes <= 500; eightyOnes++)
+	             for (int eightyOnes = 1; eightyOnes <= 300; eightyOnes++)
 	             {
 	                 for (int sevenTwoNines = 1; sevenTwoNines <= 500; sevenTwoNines++)
 	                 {
@@ -237,7 +239,7 @@ what is the least possible total value of Coda’s currency?
 	                     {
 	                         int possibleValue = ones * 1 + nines * 9 + eightyOnes * 81 + sevenTwoNines * 729;
 	                         
-	                         if (possibleValues > 10000)
+	                         if (possibleValue > 10000)
 	                         {
 	                             possibleValues.add(possibleValue);
 	                         }
